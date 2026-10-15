@@ -1,0 +1,37 @@
+{
+  "name": "tracebench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "poc": "tsx src/poc.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "vite build",
+    "dev": "concurrently -k \"tsx src/app/cli.ts serve\" \"vite\"",
+    "migrate": "tsx src/app/cli.ts migrate",
+    "seed": "tsx src/app/cli.ts seed",
+    "start": "tsx src/app/cli.ts serve",
+    "eval": "npm run build && tsx src/harness/cli.ts",
+    "test": "npm run build && tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "pg": "^8.16.0",
+    "playwright": "^1.56.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.15.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "concurrently": "^9.0.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0"
+  }
+}
